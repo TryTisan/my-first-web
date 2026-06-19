@@ -14,6 +14,7 @@ img {
     display: block;
     margin: 20px 0;
     box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s linear;
 }
 
 img:hover {
@@ -29,6 +30,7 @@ section {
     margin-bottom: 30px;  /* 每个section之间有30px的间距 */
     backdrop-filter: blur(5px);  /* 添加模糊效果，增强玻璃质感 */
     box-shadow: 25px 25px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s linear;
 }
 
 section:hover {
@@ -41,6 +43,7 @@ h1 {
     color: #1a2a3a;
     border-left: 10px solid #d24407;
     padding-left: 10px;
+    transition: all 0.3s linear;
 }
 
 h1:hover {
@@ -53,6 +56,7 @@ h2 {
     border-left: 5px solid #c4704c;
     padding-left: 10px;  /* 左侧内边距10px */
     margin-top: 25px;
+    transition: all 0.3s linear;
 }
 
 h2:hover {
@@ -66,6 +70,7 @@ ul {
     padding: 20px 20px 20px 40px;  /* 上20px,右20px,下20px,左40px的内边距 */
     border-radius: 20px;
     box-shadow: 15px 15px 5px rgba(0,0,0,0.06);
+    transition: all 0.3s linear;
 }   
 
 ul:hover {
