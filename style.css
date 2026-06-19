@@ -37,12 +37,6 @@ section:hover {
     transition: all 0.5s ease;
 }
 
-ul:hover {
-    transform: translateX(+5px) translateY(-5px) translateZ(+5px);
-    box-shadow: 10px 10px 5px rgba(0,0,0,0.15);
-    transition: all 0.5s ease;
-}
-
 h1 {
     color: #1a2a3a;
     border-left: 10px solid #d24407;
@@ -73,6 +67,12 @@ ul {
     border-radius: 20px;
     box-shadow: 15px 15px 5px rgba(0,0,0,0.06);
 }   
+
+ul:hover {
+    transform: translateX(+5px) translateY(-5px) translateZ(+5px);
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.15);
+    transition: all 0.5s ease;
+}
 
 a {
     color: #905706;
