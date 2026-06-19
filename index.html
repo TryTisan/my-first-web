@@ -9,6 +9,9 @@
 <body>
 <img src="小鸟游星野.jpg" alt="一张头像">
 <h1 id="title">你好！</h1>
+<button onclick="changeTitle()">切换标题</button>
+<button onclick="makeRed()">切换颜色</button>
+<button onclick="changeHeadings()">切换副标题样式</button>
     <p>你好，小深！这是我的第一个HTML页面。从今天开始，我要写网页了。</p>
 <section>
     <h2>我的个人简介</h2>
@@ -42,10 +45,10 @@
 <section>
     <p>你可以访问 <a href="https://www.bilibili.com" target="_blank">B站</a> 观看科技视频。</p>
     <p>你可以访问 <a href="https://www.deepseek.com" target="_blank">DeepSeek</a> 查询相关资料。</p>
+    <p>你可以访问 <a href="https://github.com" target="_blank">GitHub</a> 了解更多信息。</p>
 </section>
 
 <button onclick="toggleTheme()">切换主题</button>
-<button onclick="changeTitle()">切换标题</button>
 
 <script>
     let isDark = false;
@@ -68,7 +71,7 @@
 </script>
 
 <script>
-let isChanged = false;
+let isChanged = true;
 function changeTitle() {
     isChanged = !isChanged;
     const title = document.getElementById('title');
@@ -76,6 +79,40 @@ function changeTitle() {
         title.textContent = '你好！';
     } else {
         title.textContent = '你好，小深！';
+    }
+}
+</script>
+
+<script>
+let isRed = false;
+function makeRed() {
+    isRed = !isRed;
+    if (isRed) {
+        document.querySelectorAll('p').forEach(p => {
+            p.style.color = 'red';
+        });
+    } else {
+        document.querySelectorAll('p').forEach(p => {
+            p.style.color = '#3c4357';
+        });
+    }
+}
+</script>
+
+<script>
+let isChangedHeadings = true;
+function changeHeadings() {
+    isChangedHeadings = !isChangedHeadings;
+    if (isChangedHeadings) {
+        document.querySelectorAll('h2').forEach(h2 => {
+            h2.style.color = 'blue';
+            h2.style.fontSize = '24px';
+        });
+    } else {
+        document.querySelectorAll('h2').forEach(h2 => {
+            h2.style.color = '#1a5a9a';
+            h2.style.fontSize = '20px';
+        });
     }
 }
 </script>
