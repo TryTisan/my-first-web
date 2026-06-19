@@ -9,10 +9,15 @@
 <body>
 <img src="小鸟游星野.jpg" alt="一张头像">
 <h1 id="title">你好！</h1>
-<button onclick="changeTitle()">切换标题</button>
-<button onclick="makeRed()">切换颜色</button>
-<button onclick="changeHeadings()">切换副标题样式</button>
     <p>你好，小深！这是我的第一个HTML页面。从今天开始，我要写网页了。</p>
+<section>
+    <h2>所有“智能”按钮都在这里了</h2>
+    <button onclick="changeTitle()">切换标题</button>
+    <button onclick="makeRed()">切换颜色</button>
+    <button onclick="changeHeadings()">切换副标题样式</button>
+    <button onclick="toggleTheme()">切换主题</button>
+</section>
+
 <section>
     <h2>我的个人简介</h2>
     <p>这里是Try，现在是华北电力大学智能科学与技术专业的大一学生。</p>
@@ -48,8 +53,6 @@
     <p>你可以访问 <a href="https://github.com" target="_blank">GitHub</a> 了解更多信息。</p>
 </section>
 
-<button onclick="toggleTheme()">切换主题</button>
-
 <script>
     let isDark = false;
     function toggleTheme() {
@@ -60,11 +63,19 @@
             document.querySelectorAll('ul').forEach(ul => {
                 ul.style.backgroundColor = "#1a2a3a";
             });
+            document.querySelectorAll('button').forEach(button => {
+                button.style.backgroundColor = "#2c3e50";
+                button.style.color = "#ecf0f1";
+            });
         } else {
             document.body.style.backgroundColor = "#e1cb98";
             document.body.style.color = "#3c4357";
             document.querySelectorAll('ul').forEach(ul => {
                 ul.style.backgroundColor = "#dfc3c3";
+            });
+            document.querySelectorAll('button').forEach(button => {
+                button.style.backgroundColor = "#e4a679";
+                button.style.color = "#3c4357";
             });
         }
     }
@@ -100,18 +111,18 @@ function makeRed() {
 </script>
 
 <script>
-let isChangedHeadings = true;
+let isChangedHeadings = false;
 function changeHeadings() {
     isChangedHeadings = !isChangedHeadings;
     if (isChangedHeadings) {
         document.querySelectorAll('h2').forEach(h2 => {
-            h2.style.color = 'blue';
-            h2.style.fontSize = '24px';
+            h2.style.color = '#d24407';
+            h2.style.fontSize = '30px';
         });
     } else {
         document.querySelectorAll('h2').forEach(h2 => {
             h2.style.color = '#1a5a9a';
-            h2.style.fontSize = '20px';
+            h2.style.fontSize = '24px';
         });
     }
 }
