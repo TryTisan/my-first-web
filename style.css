@@ -3,16 +3,16 @@ body {
     color: #3c4357;
     font-family: "微软雅黑", "Segoe UI", sans-serif;
     line-height: 1.6;
-    padding: 20px;
+    padding: 20px;  /* 整体页面的内边距 */
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto;  /* 页面居中显示 */
 }
 img {
     max-width: 20%;
     height: auto;
     border-radius: 15px;
-    display: block;
-    margin: 20px 0;
+    display: block;  /* 将图片设置为块级元素，使其独占一行 */
+    margin: 20px 0;  /* 图片上下20px的外边距 */
     box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.4);
     transition: all 0.3s linear;
 }
@@ -20,6 +20,7 @@ img {
 img:hover {
     opacity: 0.9;
     transform: scale(1.15);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4);
     transition: all 0.5s ease;
 }
 

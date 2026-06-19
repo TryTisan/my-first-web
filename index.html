@@ -8,7 +8,7 @@
 </head>
 <body>
 <img src="小鸟游星野.jpg" alt="一张头像">
-<h1>你好！</h1>
+<h1 id="title">你好！</h1>
     <p>你好，小深！这是我的第一个HTML页面。从今天开始，我要写网页了。</p>
 <section>
     <h2>我的个人简介</h2>
@@ -43,6 +43,42 @@
     <p>你可以访问 <a href="https://www.bilibili.com" target="_blank">B站</a> 观看科技视频。</p>
     <p>你可以访问 <a href="https://www.deepseek.com" target="_blank">DeepSeek</a> 查询相关资料。</p>
 </section>
+
+<button onclick="toggleTheme()">切换主题</button>
+<button onclick="changeTitle()">切换标题</button>
+
+<script>
+    let isDark = false;
+    function toggleTheme() {
+        isDark = !isDark;
+        if (isDark) {
+            document.body.style.backgroundColor = "#2c3e50";
+            document.body.style.color = "#ecf0f1";
+            document.querySelectorAll('ul').forEach(ul => {
+                ul.style.backgroundColor = "#1a2a3a";
+            });
+        } else {
+            document.body.style.backgroundColor = "#e1cb98";
+            document.body.style.color = "#3c4357";
+            document.querySelectorAll('ul').forEach(ul => {
+                ul.style.backgroundColor = "#dfc3c3";
+            });
+        }
+    }
+</script>
+
+<script>
+let isChanged = false;
+function changeTitle() {
+    isChanged = !isChanged;
+    const title = document.getElementById('title');
+    if (isChanged) {
+        title.textContent = '你好！';
+    } else {
+        title.textContent = '你好，小深！';
+    }
+}
+</script>
 
 </body>
 </html>
