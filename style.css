@@ -15,33 +15,64 @@ img {
     margin: 20px 0;
     box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.4);
 }
+
+img:hover {
+    opacity: 0.9;
+    transform: scale(1.15);
+    transition: all 0.5s ease;
+}
+
 section {
     background: rgba(218, 147, 33, 0.5);
-    padding: 20px 25px;
+    padding: 20px 25px;   /* 上下20px，左右25px的内边距 */
     border-radius: 20px;
-    margin-bottom: 30px;
-    backdrop-filter: blur(2px);
+    margin-bottom: 30px;  /* 每个section之间有30px的间距 */
+    backdrop-filter: blur(5px);  /* 添加模糊效果，增强玻璃质感 */
     box-shadow: 25px 25px 10px rgba(0, 0, 0, 0.2);
 }
+
+section:hover {
+    transform: translateX(0px) translateY(-8px) translateZ(+8px);
+    box-shadow: 20px 20px 5px rgba(0,0,0,0.15);  /* 增加阴影，参数分别是右向长度、下向长度、模糊半径 */
+    transition: all 0.5s ease;
+}
+
+ul:hover {
+    transform: translateX(+5px) translateY(-5px) translateZ(+5px);
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.15);
+    transition: all 0.5s ease;
+}
+
 h1 {
     color: #1a2a3a;
     border-left: 10px solid #d24407;
     padding-left: 10px;
 }
 
+h1:hover {
+    color: #d24407;
+    transition: color 0.5s ease;
+}
+
 h2 {
     color: #1a5a9a;
     border-left: 5px solid #c4704c;
-    padding-left: 10px;
-    margin-top: 20px;
+    padding-left: 10px;  /* 左侧内边距10px */
+    margin-top: 25px;
+}
+
+h2:hover {
+    color: #d24407;
+    transition: color 0.5s ease;
 }
 
 ul {
+    border-left: 5px solid #c57a55;
     background: #dfc3c3;
-    padding: 20px 20px 20px 40px;
-    border-radius: 25px;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.06);
-}
+    padding: 20px 20px 20px 40px;  /* 上20px,右20px,下20px,左40px的内边距 */
+    border-radius: 20px;
+    box-shadow: 15px 15px 5px rgba(0,0,0,0.06);
+}   
 
 a {
     color: #905706;
@@ -49,6 +80,8 @@ a {
     font-weight: 500;
 }
 
-a:hover {
-    text-decoration: underline;
+a:hover  {
+    color:#a80502;
+    text-decoration: underline; 
+    text-decoration-color: #333c54;
 }
