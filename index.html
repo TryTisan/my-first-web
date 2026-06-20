@@ -12,10 +12,10 @@
     <p>你好，小深！这是我的第一个HTML页面。从今天开始，我要写网页了。</p>
 <section>
     <h2>所有“智能”按钮都在这里了</h2>
-    <button onclick="changeTitle()">切换标题</button>
-    <button onclick="makeRed()">切换颜色</button>
-    <button onclick="changeHeadings()">切换副标题样式</button>
-    <button onclick="toggleTheme()">切换主题</button>
+    <button id="bTnTitle">切换标题</button>
+    <button id="bTnColor">切换颜色</button>
+    <button id="bTnHeadings">切换副标题样式</button>
+    <button id="bTnTheme">切换主题</button>
 </section>
 
 <section>
@@ -54,34 +54,17 @@
 </section>
 
 <script>
-    let isDark = false;
-    function toggleTheme() {
-        isDark = !isDark;
-        if (isDark) {
-            document.body.style.backgroundColor = "#2c3e50";
-            document.body.style.color = "#ecf0f1";
-            document.querySelectorAll('ul').forEach(ul => {
-                ul.style.backgroundColor = "#1a2a3a";
-            });
-            document.querySelectorAll('button').forEach(button => {
-                button.style.backgroundColor = "#2c3e50";
-                button.style.color = "#ecf0f1";
-            });
-        } else {
-            document.body.style.backgroundColor = "#e1cb98";
-            document.body.style.color = "#3c4357";
-            document.querySelectorAll('ul').forEach(ul => {
-                ul.style.backgroundColor = "#dfc3c3";
-            });
-            document.querySelectorAll('button').forEach(button => {
-                button.style.backgroundColor = "#e4a679";
-                button.style.color = "#3c4357";
-            });
-        }
-    }
+const bTnTheme = document.getElementById('bTnTheme');
+bTnTheme.addEventListener('click', toggleTheme);
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+}
+
 </script>
 
 <script>
+const bTnTitle = document.getElementById('bTnTitle');
+bTnTitle.addEventListener('click', changeTitle);
 let isChanged = true;
 function changeTitle() {
     isChanged = !isChanged;
@@ -95,36 +78,18 @@ function changeTitle() {
 </script>
 
 <script>
-let isRed = false;
+const bTnColor = document.getElementById('bTnColor');
+bTnColor.addEventListener('click', makeRed);
 function makeRed() {
-    isRed = !isRed;
-    if (isRed) {
-        document.querySelectorAll('p').forEach(p => {
-            p.style.color = 'red';
-        });
-    } else {
-        document.querySelectorAll('p').forEach(p => {
-            p.style.color = '#3c4357';
-        });
-    }
+    document.body.classList.toggle('red-theme');
 }
 </script>
 
 <script>
-let isChangedHeadings = false;
+const bTnHeadings = document.getElementById('bTnHeadings');
+bTnHeadings.addEventListener('click', changeHeadings);
 function changeHeadings() {
-    isChangedHeadings = !isChangedHeadings;
-    if (isChangedHeadings) {
-        document.querySelectorAll('h2').forEach(h2 => {
-            h2.style.color = '#d24407';
-            h2.style.fontSize = '30px';
-        });
-    } else {
-        document.querySelectorAll('h2').forEach(h2 => {
-            h2.style.color = '#1a5a9a';
-            h2.style.fontSize = '24px';
-        });
-    }
+    document.body.classList.toggle('font-theme');
 }
 </script>
 
