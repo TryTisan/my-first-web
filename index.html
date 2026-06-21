@@ -20,8 +20,9 @@
 
 <section>
     <h2>我的个人简介</h2>
-    <p>这里是Try，现在是华北电力大学智能科学与技术专业的大一学生。</p>
-    <p>目前正在学习Web开发，目标是学会自己写网页，希望能够在不久的将来独立完成一个完整的网站。</p>
+<p>这里是Try，现在是华北电力大学智能科学与技术专业的大一学生。</p>
+<p id="extra-intro">目前正在学习Web开发，目标是学会自己写网页，希望能够在不久的将来独立完成一个完整的网站。</p>
+<button id="toggleIntro">展开</button>
 </section>
 
 <section>
@@ -93,6 +94,15 @@ function changeHeadings() {
 }
 </script>
 
+<script>
+const toggleIntroBtn = document.getElementById('toggleIntro');
+const extraIntro = document.getElementById('extra-intro');
+toggleIntroBtn.addEventListener('click', ExtroToggle);
+function ExtroToggle() {
+    extraIntro.classList.toggle('show');
+    toggleIntroBtn.textContent = extraIntro.classList.contains('show') ? '收起' : '展开';
+}
+</script>
 </body>
 </html>
 

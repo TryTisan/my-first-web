@@ -123,6 +123,20 @@ button:hover {
     transition: all 0.5s ease;
 }
 
+#extra-intro {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.3s ease;
+    margin: 0;
+}
+
+#extra-intro.show {
+    max-height: 300px;    /* 足够容纳你的内容 */
+    opacity: 1;
+    margin: 10px 0;
+}
+
 .dark-theme {
     background-color: #2c3e50;
     color: #ecf0f1;
